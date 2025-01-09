@@ -12,7 +12,7 @@ class Season extends Model
     protected $fillable = ['name'];
 
         public function products(){
-        return $this->belongsToMany(product_season::class);
+        return $this->belongsToMany(ProductSeason::class);
     }
 
 

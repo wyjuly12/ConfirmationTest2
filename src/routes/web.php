@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductContorller;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +21,16 @@ Route::get('/', function () {
 
 Route::prefix('products')->group(function(){
     Route::get('/' , [ProductController::class ,'index']);
-    Route::get('/{:productId}' , [ProductController::class , 'detail']);
-    Route::post('/{:productId}/update' , [ProductController::class , 'update']);
     Route::get('/register' , [ProductController::class , 'register']);
-    Route::post('/products/search' , [ProductController::class , 'search']);
-    Route::post('/{:productId}/delete' , [ProductController::class , 'delete']);   
+    Route::post('/register' , [ProductController::class , 'create']);
+    Route::get('/:{productId}' , [ProductController::class , 'detail']);
+    Route::PATCH('/:{productId}/update' , [ProductController::class , 'update']);
+    Route::get('/search' , [ProductController::class , 'search']);
+    Route::DELETE('/:{productId}/delete' , [ProductController::class , 'delete']);
+    
+    
+
+
 });
 
 

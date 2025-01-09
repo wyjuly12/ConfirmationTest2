@@ -1,0 +1,111 @@
+.main-content {
+    margin-top: 100px;
+}
+
+.form-detail {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form-contenner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group__image {
+    width: 30%;
+    margin-right: 20px;
+}
+
+.form-group__image-view input {
+    height: 250px;
+    width: 100%;
+}
+
+
+.form-group__text {
+    width: 70%;
+}
+
+.form-group__input {
+    margin-bottom: 30px;
+}
+
+.form-group__input-label {
+    margin-bottom: 10px;
+}
+
+.form-group__input-label label {
+    font-size: larger;
+    font-weight: bolder;
+}
+
+
+.from-group__input-box input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group__season-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-group__season-content label {
+    font-weight: bolder;
+}
+
+
+.form-textarea {
+    margin-bottom: 20px;
+}
+
+.form-textarea textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-button {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-button__reset button {
+    width: 200px;
+    padding: 10px 20px;
+    background-color: gray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-form__button-reset a {
+    text-decoration-line: none;
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+
+
+.form-button__submit button {
+    width: 200px;
+    padding: 10px 20px;
+    background-color: orange;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-button__delete button img {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
