@@ -17,6 +17,7 @@ mogitateサイト
 　Laravel 8.83.8
 
 ## ER図
+![ConfirmationTest2](https://github.com/user-attachments/assets/d08edd60-f8c4-4db4-806b-2343922fd4ed)
 
 
 
