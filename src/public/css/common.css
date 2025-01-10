@@ -4,5 +4,12 @@
 }
 
 .main {
-    background-color: gray
+    background-color: antiquewhite;
+
+}
+
+.header-title h2 {
+    font-size: larger;
+    font-weight: bold;
+    border-bottom: 2px;
 }

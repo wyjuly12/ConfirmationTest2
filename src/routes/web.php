@@ -23,10 +23,10 @@ Route::prefix('products')->group(function(){
     Route::get('/' , [ProductController::class ,'index']);
     Route::get('/register' , [ProductController::class , 'register']);
     Route::post('/register' , [ProductController::class , 'create']);
-    Route::get('/:{productId}' , [ProductController::class , 'detail']);
-    Route::PATCH('/:{productId}/update' , [ProductController::class , 'update']);
+    Route::get('/productId:{productId}' , [ProductController::class , 'detail']);
+    Route::PATCH('/productId:{productId}/update' , [ProductController::class , 'update']);
     Route::get('/search' , [ProductController::class , 'search']);
-    Route::DELETE('/:{productId}/delete' , [ProductController::class , 'delete']);
+    Route::DELETE('/productId:{productId}/delete' , [ProductController::class , 'delete']);
     
     
 

@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Http\Requests\ProductRequest;
 
-use Illuminate\Support\Str;
 
 
 
@@ -17,7 +16,7 @@ class ProductController extends Controller
     
     // 一覧画面
     public function index(){
-        $products = Product::all();
+        $products = Product::Paginate(6);
         return view('index',compact('products'));
     }
 
@@ -36,11 +35,7 @@ class ProductController extends Controller
 
 
     //登録機能
-    public function create(Request $request){
-        if($request->has('reset')){
-            return redirect('/products');
-        }
-
+    public function create(ProductRequest $request){
         $form = $request->only(['id','name','price','image','season_id','description']);
  
         $fileName = $request->file('image')->getClientOriginalName();
@@ -51,7 +46,7 @@ class ProductController extends Controller
     }
 
     // 更新機能
-    public function update(Request $request){
+    public function update(ProductRequest $request){
         $form = $request->only(['name','price','image','season_id','description']);
         unset($form['_token']);
 
@@ -61,6 +56,7 @@ class ProductController extends Controller
         Product::find($request->id)->update($form);
         return redirect('/products');
     }
+
 
     // 削除機能
     public function delete(Request $request){
@@ -72,7 +68,7 @@ class ProductController extends Controller
 
     // 検索機能
     public function search(Request $request){
-        $products = Product::keywordSearch($request->keyword)->get();
+        $products = Product::keywordSearch($request->keyword)->priceSort($request->sort)->paginate(6);
         return view('index', compact('products'));
     }
 

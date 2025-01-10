@@ -15,29 +15,31 @@
             <form action="/products/register" method="get">
                 <button type="submit">＋&nbsp;商品追加</> 
             </form>  
-        </div>                 
+        </div>         
+                
     </div>
 
     <div class="main-content">
         <div class="main-content__search">
-            <form class="main-content__from" action="/products/search" method="get">
+            <form class="main-content__from" action="/products/search" method="get" enctype="multipart/form-data">
                 <div class="main-content__search-input">
                 <input type="search" name="keyword" value="{{ request('keyword') }}" placeholder="商品名で検索">
                 </div>  
                 <div class="main-content__search-button">
                     <button type="submit">検索</button>
                 </div>
-            </form>
             <div class="main-content__search-title">
                 <p>価格順で検索</p>
             </div>
             <div class="main-content__search-sort">
                 <select name="sort"  id="">
-                    <option hidden disabled selected>価格で並び替え</option>
-                    <option value="asc" >価格の低い順</option>
-                    <option value="dasc">価格の高い順</option>
+                    <option hidden disabled selected oninput="submit">価格で並び替え</option>
+                    <option value="{{ request('asc') }}"   >価格の低い順</option>
+                    <option value="{{ request('desc') }}"   >価格の高い順</option>
                 </select>
             </div>
+            </form>
+
         </div>
 
         <!-- データ一覧 -->
@@ -45,7 +47,7 @@
             @foreach($products as $product)
             <div class="main-content__view-box">
                 <div class="main-content__view-img">
-                    <a href="/products/:{{$product->id}}"><img src="{{ asset('storage/'.$product->image) }}" alt=""></a>
+                    <a href="/products/productId:{{$product->id}}"><img src="{{ asset('storage/'.$product->image) }}" alt=""></a>
                 </div>
                 <div class="main-content__view-content">
                     <div class="main-content__view-title">
@@ -59,6 +61,11 @@
             @endforeach
         </div>
     </div>
+    <div class="main-content__paginate">
+        <p>{{ $products->links() }}</p>
+    </div>
+
+
 </div>
 
 

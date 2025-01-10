@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="main-content">
-    <form class="form-detail" action="./:{{$product->id}}/update" method="post" enctype="multipart/form-data">
+    <form class="form-detail" action="./productId:{{$product->id}}/update" method="post" enctype="multipart/form-data">
         @method('PATCH')
         @csrf
         <div class="form-contenner">
@@ -75,7 +75,11 @@
                         </div>
                     </div>
                     <div class="form-error">
-                        <!--   バリデーション -->
+                        @if($errors->has('season_id'))
+                        <tr>
+                            <td>{{ $errors->first('season_id')}}</td>
+                        </tr>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -103,7 +107,7 @@
                 <button type="submit">変更</button>
             </div>
     </form>
-    <form class="form-button__delete" action="./:{{$product->id}}/delete" method="post">
+    <form class="form-button__delete" action="./productId:{{$product->id}}/delete" method="post">
         @method('DELETE')
         @csrf
         <input type="hidden" name="id" value="{{$product->id}}">

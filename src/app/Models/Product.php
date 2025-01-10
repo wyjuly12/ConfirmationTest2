@@ -19,7 +19,7 @@ class Product extends Model
 
     // リレーション
     public function seasons(){
-        return $this->belongsToMany(ProductSeason::class);
+        return $this->belongsToMany(ProductSeason::class)->withTimestamps();
     }
 
     //ローカルスコープ(キーワード検索)
@@ -30,16 +30,19 @@ class Product extends Model
     }
 
     // ローカルスコープ(価格検索)
-    public function socopePriceSort($query,$price){
-        if(!empty($price)){
+    public function scopePriceSort($query,$sort){
+        if(!empty($sort)){
             if($sort = 'asc'){
-                $products = Product::orderBy('price' , 'asc')->get();
+                $products = Product::orderBy('price')->get();
             }
-            if($sort = 'dasc'){
-                $products = Product::orderBy('price' , 'dasc')->get();               
+            if($sort = 'desc'){
+                $products = Product::orderByDesc('price')->get();               
             }
         }
     }
+
+
+   
 
 
 
