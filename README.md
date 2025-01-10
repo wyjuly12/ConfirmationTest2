@@ -1,5 +1,5 @@
 # アプリケーション名
-問い合わせフォーム
+mogitateサイト
 
 ## Dockerビルド
 １, git@github.com:wyjuly12/ConfirmationTest2.git
