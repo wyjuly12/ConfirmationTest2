@@ -27,10 +27,6 @@ Route::prefix('products')->group(function(){
     Route::PATCH('/productId:{productId}/update' , [ProductController::class , 'update']);
     Route::get('/search' , [ProductController::class , 'search']);
     Route::DELETE('/productId:{productId}/delete' , [ProductController::class , 'delete']);
-    
-    
-
-
 });
 
 

@@ -36,7 +36,7 @@ class ProductController extends Controller
 
     //登録機能
     public function create(ProductRequest $request){
-        $form = $request->only(['id','name','price','image','season_id','description']);
+        $form = $request->only(['name','price','image','season_id','description']);
  
         $fileName = $request->file('image')->getClientOriginalName();
         $request->file('image')->storeAs('public',$fileName);

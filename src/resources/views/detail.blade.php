@@ -43,9 +43,9 @@
                         <input type="text" name="price" id="" value="{{ $product->price }}">
                     </div>
                     <div class="form-error">               
-                        @if($errors->count('$errors->price') > 0)
+                        @if($errors->has('price'))
                         <ul>
-                        @foreach($errors->has('price') as $error)
+                        @foreach($errors->get('price') as $error)
                         <li>{{ $error }}</li>
                         @endforeach
                         </ul>
@@ -59,19 +59,19 @@
                     <div class="form-group__season-content">
                         <div class="form-group__season-group">
                             <label for="season1">春</label>
-                            <input type="checkbox" name="name" id="season1" value="1" >
+                            <input type="checkbox" name="season_id" id="season1" value="1" {{old('season_id')==1 ? 'checked' : '' }}>
                         </div>
                         <div class="form-group__season-group">
                             <label for="season2">夏</label>
-                            <input type="checkbox" name="name" id="season2" value="2" >
+                            <input type="checkbox" name="season_id" id="season2" value="2" {{old('season_id')==2 ? 'checked' : '' }}>
                         </div>
                         <div class="form-group__season-group">
                             <label for="season3">秋</label>
-                            <input type="checkbox" name="name" id="season3" value="3" >
+                            <input type="checkbox" name="season_id" id="season3" value="3" {{old('season_id')==3 ? 'checked' : '' }}>
                         </div>
                         <div class="form-group__season-group">
                             <label for="season4">冬</label>
-                            <input type="checkbox" name="name" id="season4" value="4" >
+                            <input type="checkbox" name="season_id" id="season4" value="4" {{old('season_id')==4 ? 'checked' : '' }}>
                         </div>
                     </div>
                     <div class="form-error">
@@ -90,9 +90,9 @@
             </div>
             <textarea name="description" id="" >{{ $product->description }}</textarea>
             <div class="form-error">               
-                @if($errors->count('$errors->price') > 0)
+                @if($errors->has('description'))
                 <ul>
-                @foreach($errors->has('price') as $error)
+                @foreach($errors->get('description') as $error)
                 <li>{{ $error }}</li>
                 @endforeach
                 </ul>
