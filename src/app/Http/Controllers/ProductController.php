@@ -36,24 +36,37 @@ class ProductController extends Controller
 
     //登録機能
     public function create(ProductRequest $request){
-        $form = $request->only(['name','price','image','season_id','description']);
  
+        $dateStamp = date('Ymd_His');
         $fileName = $request->file('image')->getClientOriginalName();
-        $request->file('image')->storeAs('public',$fileName);
+        $request->file('image')->storeAs('public',$dateStamp.'_'.$fileName);
 
-        Product::create($form);
+        Product::create([
+            'name' => $request->name ,
+            'price' => $request->price ,
+            'image' => $dateStamp.'_'.$fileName ,
+            'season_id' => $request->season_id ,
+            'description' => $request->description
+        ]);
+
         return redirect('/products');
     }
 
     // 更新機能
     public function update(ProductRequest $request){
-        $form = $request->only(['name','price','image','season_id','description']);
-        unset($form['_token']);
-
+        
+        $dateStamp = date('Ymd_His');
         $fileName = $request->file('image')->getClientOriginalName();
-        $request->file('image')->storeAs('public',$fileName);
+        $request->file('image')->storeAs('public',$dateStamp.'_'.$fileName);
+       
+        Product::find($request->id)->update([
+            'name' => $request->name ,
+            'price' => $request->price ,
+            'image' => $dateStamp.'_'.$fileName ,
+            'season_id' => $request->season_id ,
+            'description' => $request->description    
+        ]);
 
-        Product::find($request->id)->update($form);
         return redirect('/products');
     }
 

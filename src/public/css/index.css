@@ -80,7 +80,7 @@
 .main-content__view {
     display: flex;
     justify-content: start;
-    flex-wrap: wrap
+    flex-wrap: wrap;
 }
 
 .main-content__view-box {
@@ -93,25 +93,29 @@
 }
 
 
-.main-content__view-img a img {
-    width: 100%;
-    height: 100%;
+.main-content__view-img img {
+    width: 300px;
+    height: 250px;
+    box-sizing: border-box;
+    background-color: white;
 }
 
 .main-content__view-content {
     display: flex;
     justify-content: space-between;
+
 }
 
 .main-content__view-title {
     margin-left: 20px;
+    height: 20%;
     justify-items: center;
 }
 
 .main-content__view-text {
+    height: 20%;
     margin-right: 20px;
 }
-
 
 
 .w-5.h-5 {
