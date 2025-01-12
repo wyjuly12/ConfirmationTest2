@@ -85,22 +85,22 @@
             <div class="register-form__checkbox">
                 <div class="register-form__checkbox-group">
                     <label for="season1">春
-                        <input type="checkbox" name="season_id" id="season" value="1" {{old('season_id')==1  ? 'checked' : '' }}>
+                        <input type="checkbox" name="season_id" id="season1" value="1" {{old('season_id')==1  ? 'checked' : '' }}>
                     </label>
                 </div>
                 <div class="register-form__checkbox-group">
                     <label for="season2">夏
-                        <input type="checkbox" name="season_id" id="season" value="2" {{old('season_id')==2  ? 'checked' : '' }}>
+                        <input type="checkbox" name="season_id" id="season2" value="2" {{old('season_id')==2  ? 'checked' : '' }}>
                     </label>
                     </div>
                 <div class="register-form__checkbox-group">
                     <label for="season3">秋
-                        <input type="checkbox" name="season_id" id="season" value="3" {{old('season_id')==3 ? 'checked' : '' }}>
+                        <input type="checkbox" name="season_id" id="season3" value="3" {{old('season_id')==3 ? 'checked' : '' }}>
                     </label>
                 </div>
                 <div class="register-form__checkbox-group">
                     <label for="season4">冬
-                        <input type="checkbox" name="season_id" id="season" value="4" {{old('season_id')==4 ? 'checked' : '' }}>
+                        <input type="checkbox" name="season_id" id="season4" value="4" {{old('season_id')==4 ? 'checked' : '' }}>
                     </label>
                 </div>
             </div> 

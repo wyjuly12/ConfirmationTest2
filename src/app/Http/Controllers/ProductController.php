@@ -45,9 +45,10 @@ class ProductController extends Controller
             'name' => $request->name ,
             'price' => $request->price ,
             'image' => $dateStamp.'_'.$fileName ,
-            'season_id' => $request->season_id ,
+            'season_id' => $request->season_id,
             'description' => $request->description
         ]);
+
 
         return redirect('/products');
     }
@@ -58,6 +59,7 @@ class ProductController extends Controller
         $dateStamp = date('Ymd_His');
         $fileName = $request->file('image')->getClientOriginalName();
         $request->file('image')->storeAs('public',$dateStamp.'_'.$fileName);
+
        
         Product::find($request->id)->update([
             'name' => $request->name ,
